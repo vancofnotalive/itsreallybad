@@ -1,0 +1,89 @@
+ * {
+      margin: 0 !important;
+      padding: 0 !important;
+      flex-shrink: 0 !important;
+    }
+:root {
+  --link-color: rgb(54, 54, 54);;
+}
+    a {
+      text-decoration: none;
+    }
+    h1, h2 , h3 , h4 , h5 ,h6 , strong , span , p , a {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+input {
+  border: none;
+  outline: none;
+}
+    if-block {
+      display: none;
+    }
+
+   /* Phones (Portrait) */
+@media (max-width: 480px) {
+  if-block[device*="phone"] {
+    display: contents;
+  }
+  .form-header {
+    justify-content: center;
+  }
+  .form-img {
+    position: relative !important;
+  }
+  .form-img img {
+    width: 50% !important;
+  }
+}
+
+/* Phones (Landscape) and Small Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  if-block[device*="tab"] {
+    display: contents;
+  }
+}
+
+/* Tablets (Landscape) and Small Laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  if-block[device*="lap"] {
+    display: contents;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  if-block[device*="pc"] {
+    display: contents;
+  }
+}
+
+/* Large Desktops / TVs */
+@media (min-width: 1441px) {
+  if-block[device*="tv"] {
+    display: contents;
+  }
+}
+
+    body {
+      display: flex;
+      overflow: hidden;
+      width: 100dvw;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      if-block[theme=dark] {
+        display: contents;
+      }
+      if-block[theme=light] {
+        display: none;
+      }
+}
+
+@media (prefers-color-scheme: light) {
+if-block[theme=dark] {
+        display: none;
+      }
+      if-block[theme=light] {
+        display: contents;
+      }
+}
