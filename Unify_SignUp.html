@@ -15,7 +15,10 @@
     <if-block device="pc || tab || lap || tv">
 
     
-<section class="form-content" ds="width: .form_W / 2; height: .form_H;">
+<section class="form-content form-content-active" ds="width: .form_W / 2; height: .form_H;">
+
+
+
 
     <section class="form-content-heading"  ds="width: .form-content_W / 1.050;
      height: .form-content_H / 10;
@@ -39,28 +42,12 @@
            <input value="Jhon martin doe" type="text" ds="height:  $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80);
             width: $t$.form-content-heading--input_W - (($t$.form-content-heading--input_W / 5) + (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 70))">
         </main>
-        <h1 ds="height: ($t$.form-content-heading--input_H / 2) - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 75);
+        <h1 id="errorMessage" ds="height: ($t$.form-content-heading--input_H / 2) - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 75);
          width: $t$.form-content-heading--input_W;
-         fs: ($t$.form-content-heading--input@h1_H + $t$.form-content-heading--input@h1_W) / 60;">
-         <span>Error message goes here</span></h1>
+         fs: ($t$.form-content-heading--input@h1_H + $t$.form-content-heading--input@h1_W) / 55;">
+         <span id="errorMessageText"> </span></h1>
         </section>
-    <section class="form-content-heading--input" id="username" ds="height: (.form-content_H - .form-content-heading_H) / 9; 
-    width: .form-content_W / 1.1;
-    marginT: .form-content-heading--input_H / 5 !i;">
-       <main ds="height: $t$.form-content-heading--input_H / 2.5; width: $t$.form-content-heading--input_W;
-       border-width: ($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 150; ">
-           <span ds="height: $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80); width: $t$.form-content-heading--input_W / 5;
-           fs: ($t$.form-content-heading--input@main_H + $t$.form-content-heading--input@main_W) / 40;">
-         <i style="margin-right: 1ch !important;" class="fa-solid fa-signature"></i>
-        <h6>Username</h6></span> 
-           <input placeholder="user1234312" type="text" ds="height:  $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80);
-            width: $t$.form-content-heading--input_W - (($t$.form-content-heading--input_W / 5) + (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 70))">
-        </main>
-        <h1 ds="height: ($t$.form-content-heading--input_H / 2) - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 75);
-         width: $t$.form-content-heading--input_W;
-         fs: ($t$.form-content-heading--input@h1_H + $t$.form-content-heading--input@h1_W) / 60;">
-         <span>Error message goes here</span></h1>
-        </section>
+    
     <section class="form-content-heading--input" id="email" ds="height: (.form-content_H - .form-content-heading_H) / 9; 
     width: .form-content_W / 1.1;
     marginT: .form-content-heading--input_H / 5 !i;">
@@ -70,13 +57,30 @@
            fs: ($t$.form-content-heading--input@main_H + $t$.form-content-heading--input@main_W) / 40;">
         <i class="fa-solid fa-envelope" style="margin-right: 1ch !important;"></i>
     <h6>Email</h6></span> 
-           <input  type="text" ds="height:  $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80);
+           <input value="exampleeamil@gmail.com" type="text" ds="height:  $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80);
             width: $t$.form-content-heading--input_W - (($t$.form-content-heading--input_W / 5) + (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 70))">
         </main>
-        <h1 ds="height: ($t$.form-content-heading--input_H / 2) - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 75);
+        <h1 id="errorMessage" ds="height: ($t$.form-content-heading--input_H / 2) - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 75);
          width: $t$.form-content-heading--input_W;
-         fs: ($t$.form-content-heading--input@h1_H + $t$.form-content-heading--input@h1_W) / 60;">
-         <span>Error message goes here</span></h1>
+         fs: ($t$.form-content-heading--input@h1_H + $t$.form-content-heading--input@h1_W) / 55;">
+         <span id="errorMessageText" > </span></h1>
+        </section>
+        <section class="form-content-heading--input" id="username" ds="height: (.form-content_H - .form-content-heading_H) / 9; 
+    width: .form-content_W / 1.1;
+    marginT: .form-content-heading--input_H / 5 !i;">
+       <main ds="height: $t$.form-content-heading--input_H / 2.5; width: $t$.form-content-heading--input_W;
+       border-width: ($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 150; ">
+           <span ds="height: $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80); width: $t$.form-content-heading--input_W / 5;
+           fs: ($t$.form-content-heading--input@main_H + $t$.form-content-heading--input@main_W) / 40;">
+         <i style="margin-right: 1ch !important;" class="fa-solid fa-signature"></i>
+        <h6>Username</h6></span> 
+           <input value="user1234312" type="text" ds="height:  $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80);
+            width: $t$.form-content-heading--input_W - (($t$.form-content-heading--input_W / 5) + (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 70))">
+        </main>
+        <h1 id="errorMessage" ds="height: ($t$.form-content-heading--input_H / 2) - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 75);
+         width: $t$.form-content-heading--input_W;
+         fs: ($t$.form-content-heading--input@h1_H + $t$.form-content-heading--input@h1_W) / 55;">
+         <span id="errorMessageText">  </span></h1>
         </section>
     <section class="form-content-heading--input" id="password" ds="height: (.form-content_H - .form-content-heading_H) / 9; 
     width: .form-content_W / 1.1;
@@ -90,12 +94,12 @@
            <input  type="text" ds="height:  $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80);
             width: $t$.form-content-heading--input_W - (($t$.form-content-heading--input_W / 5) + (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 70))">
         </main>
-        <h1 ds="height: ($t$.form-content-heading--input_H / 2) - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 75);
+        <h1 id="errorMessage" ds="height: ($t$.form-content-heading--input_H / 2) - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 75);
          width: $t$.form-content-heading--input_W;
-         fs: ($t$.form-content-heading--input@h1_H + $t$.form-content-heading--input@h1_W) / 60;">
-         <span>Error message goes here</span></h1>
+         fs: ($t$.form-content-heading--input@h1_H + $t$.form-content-heading--input@h1_W) / 55;">
+         <span id="errorMessageText"> </span></h1>
         </section>
-<section class="form-content-date-main-container" ds="
+<section class="form-content-date-main-container" id="date" ds="
 height: (.form-content_H - .form-content-heading_H) / 4.6;
 marginT: .form-content-date-main-container_H / 20 !i;
 marginB: .form-content-date-main-container_H / 20 !i;
@@ -123,7 +127,7 @@ marginB: .form-content-date-main-container_H / 20 !i;
                     <span ds="
                     width: $t$.form-content-date-container-value_W;
                     height: $t$.form-content-date-container-value_H / 3;">
-                        <strong ds="fs: ($t$.form-content-date-container-value@span_W + $t$.form-content-date-container-value@span_H) / 13;">Friday</strong>
+                        <strong ds="fs: ($t$.form-content-date-container-value@span_W + $t$.form-content-date-container-value@span_H) / 13;">02</strong>
                     </span>
                     
                       <input oninput="simulateInput(this , this.closest('section').querySelector('span strong'))" type="text" ds="
@@ -170,9 +174,9 @@ marginB: .form-content-date-main-container_H / 20 !i;
                
             </section>
         </section>
-        <section class="form-content-date-main-container-error-message" ds="
+        <section class="form-content-date-main-container-error-message" id="errorMessage" ds="
         height: (.form-content-date-main-container_H - .form-content-date_H) / 1.4;">
-<span ds="fs: (.form-content-date-main-container-error-message_H + .form-content-date-main-container-error-message_W) / 60;">Error message goes here</span>
+<span id="errorMessageText" ds="fs: (.form-content-date-main-container-error-message_H + .form-content-date-main-container-error-message_W) / 60;"> </span>
         </section>
   </section>
   <!-- height is not right -->
@@ -180,28 +184,132 @@ marginB: .form-content-date-main-container_H / 20 !i;
   height: (.form-content_H - (.form-content-heading_H + (.form-content-heading--input_H * 4) + .form-content-date_H)) / 5;
   width: .form-content_W / 1.1;">
   
-    <section class="form-content-create-btn" ds="
+    <section class="form-content-create-btn" onclick="createAccount()" ds="
     border-width: (.form-content-btn-row_H + .form-content-btn-row_W) / 150;
-    width: .form-content-btn-row_W / 3.5;
+    width: .form-content-btn-row_W / 3;
     height: .form-content-btn-row_H / 1.2;">
         <main ds="height: (.form-content-create-btn_H) - ((.form-content-btn-row_H + .form-content-btn-row_W) / 75);">
             <i ds="fs: (.form-content-create-btn_H + .form-content-create-btn_W) / 15;" class="fa-solid fa-door-open"></i>
              <h1 style="margin-left: 1ch !important;" ds="fs: (.form-content-create-btn_H + .form-content-create-btn_W) / 15;">Create account</h1></main>
         
     </section>
+    <section class="already-have-account" ds="width: .form-content-btn-row_W - (.form-content-create-btn_W); 
+  height: .form-content-btn-row_H / 1.1;">
+    <a href="" ds="fs: (.already-have-account_H + .already-have-account_W) / 30;">Already have an account? 
+        <span>login now </span></a>
+  </section>
   </section>
 
 
 
 </section>
-<section class="form-image" ds="height: .form_H; width: .form_W / 2;">
+<section class="form-image " ds="height: .form_H; width: .form_W / 2;">
     <main ds="width: .form-image_W; height: .form-image_H / 5;">
         <img ds="width: $t$.form-image@main_W / 2.5; max-height: $t$.form-image@main_H;" src="https://i.postimg.cc/3wRXXvyy/blue-upscalemedia-transformed.png" alt="" srcset="">
     </main>
-    <section ds="height: .form-image_H - $t$.form-image@main_H; width: .form-image_W;">
-        <img  ds="width: $t$.form-image@section_W / 1.5; max-height: $t$.form-image@section_H;" src="https://i.postimg.cc/tJc11tC7/image.png" alt="" srcset="">
-    </section>
+    <target-block element=".form-content" has="form-content-active">
+
+        <section ds="height: .form-image_H - $t$.form-image@main_H; width: .form-image_W;">
+            <img  ds="width: $t$.form-image@section_W / 1.5; max-height: $t$.form-image@section_H;" src="https://i.postimg.cc/tJc11tC7/image.png" alt="" srcset="">
+        </section>
+    </target-block>
     
+    <target-block element=".form-content" has="form-content-deactivate">
+<section class="form-email-sent-container " ds="width: .form-content_W;
+height: .form-content_H - ($t$.form-image@main_H);">
+    
+<section class="email-icon" ds="height: (.form-email-sent-container_H + .form-email-sent-container_W) / 13; 
+width: (.form-email-sent-container_H + .form-email-sent-container_W) / 13;">
+    <main>
+
+    </main>
+    <aside ds="height: .email-icon_H / 1.2; width: .email-icon_W / 1.2;">
+
+        <i ds="fs: (.email-icon@aside_H + .email-icon@aside_W) / 4;" class="fa-solid fa-envelope-circle-check"></i>
+    </aside>
+    
+</section>
+<section class="email-sent-text" ds="width: .form-email-sent-container_W / 1.1;
+height: (.form-email-sent-container_H - (.email-icon_H)) / 4.4;
+paddingT: .email-sent-text_H / 6 !i;">
+    <h1 ds="fs: (.email-sent-text_H + .email-sent-text_W) / 30;">We have sent a code to</h1>
+    <a href="https://gmail.com/" target="_blank" ds="fs: (.email-sent-text_H + .email-sent-text_W) / 32;">exampleeamil@gmail.com</a>
+    <h3 ds="fs: (.email-sent-text_H + .email-sent-text_W) / 60;"> Please check your email and enter the code below</h3>
+</section>
+
+<section id="email-code" class="email-code" ds="height: (.form-email-sent-container_H - (.email-icon_H + .email-sent-text_H)) / 3;
+width: .form-email-sent-container_W / 1.1;">
+<span ds="height: .email-code_H / 1.5; 
+width: .email-code_W / 7;">
+<input ds="fs: (.email-code_H + .email-code_W) / 25;" connect="email-code-input-1" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1">
+<input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" 
+class="invincible-email-code-input" host="email-code-input-1">
+</span>
+<span ds="height: .email-code_H / 1.5; 
+width: .email-code_W / 7;">
+<input ds="fs: (.email-code_H + .email-code_W) / 25;" connect="email-code-input-2" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1">
+<input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" 
+class="invincible-email-code-input" host="email-code-input-2">
+</span>
+<span ds="height: .email-code_H / 1.5; 
+width: .email-code_W / 7;">
+<input ds="fs: (.email-code_H + .email-code_W) / 25;" connect="email-code-input-3" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1">
+<input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" 
+class="invincible-email-code-input" host="email-code-input-3">
+</span>
+<span ds="height: .email-code_H / 1.5; 
+width: .email-code_W / 7;">
+<input ds="fs: (.email-code_H + .email-code_W) / 25;" connect="email-code-input-4" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1">
+<input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" 
+class="invincible-email-code-input" host="email-code-input-4">
+</span>
+<span ds="height: .email-code_H / 1.5; 
+width: .email-code_W / 7;">
+<input ds="fs: (.email-code_H + .email-code_W) / 25;" connect="email-code-input-5" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1">
+<input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" 
+class="invincible-email-code-input" host="email-code-input-5">
+</span>
+<span ds="height: .email-code_H / 1.5; 
+width: .email-code_W / 7;">
+<input ds="fs: (.email-code_H + .email-code_W) / 25;" connect="email-code-input-6" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1">
+<input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" 
+class="invincible-email-code-input" host="email-code-input-6">
+</span>
+</section>
+<section class="email-form-row-btn" ds="width: .email-code_W;
+ height: (.form-email-sent-container_H - (.email-icon_H + .email-sent-text_H + .email-code_H)) / 2;">
+
+ <section onclick="backToForm()" class="go-back-btn" ds="width: .email-form-row-btn_W / 2; height: .email-form-row-btn_H / 1.1;">
+    <img src="https://i.postimg.cc/PryYmjzv/image.png" 
+    ds="width: .go-back-btn_W / 2;" alt="">
+     
+ </section>
+
+
+<section class="email-form-row-btn-submit-btn" ds="height: .email-form-row-btn_H / 2;
+width: .email-form-row-btn_W / 2;">
+    <h1 ds="border-width: (.email-form-row-btn-submit-btn_H + .email-form-row-btn-submit-btn_W) / 50;
+    height: (.email-form-row-btn-submit-btn_H - ((.email-form-row-btn-submit-btn_H + .email-form-row-btn-submit-btn_W) / 50)) / 2;
+    width: .email-form-row-btn-submit-btn_W - (((.email-form-row-btn-submit-btn_H - ((.email-form-row-btn-submit-btn_H + .email-form-row-btn-submit-btn_W) / 50)) / 2) * 1.5);
+    fs: (.email-form-row-btn-submit-btn_H + .email-form-row-btn-submit-btn_W) / 25;">Submit</h1>
+</section>
+
+</section>
+
+<section class="email-form-resend" 
+ds="height: (.form-email-sent-container_H - (.email-icon_H + .email-sent-text_H + .email-code_H + .email-form-row-btn-submit-btn_H)) / 2;
+width: .form-email-sent-container_W / 1.1;">
+    <h1 ds="fs: (.email-form-resend_H + .email-form-resend_W) / 50;">Didn't recived an email?</h1>
+
+    <button ds="height: .email-form-resend@h1_H * 2;
+    width: (.email-form-resend_W / 2.5) - .email-form-resend@h1_W;"> 
+    <i ds="fs: (.email-form-resend@button_H + .email-form-resend@button_W) / 10;" class="fa-solid fa-rotate"></i>
+    <span ds="fs: (.email-form-resend@button_H + .email-form-resend@button_W) / 10;"> Resend</span></button>
+</section>
+
+
+</section>
+    </target-block>
 </section>
 </if-block>
 <if-block device="phone">
@@ -213,7 +321,7 @@ marginB: .form-content-date-main-container_H / 20 !i;
         <h1 ds="fs: (.form-content-heading_H + .form-content-heading_W) / 20;">Create an account</h1>
     </section>
     
-   <!-- yes works checks if-block, so need to worry -->
+   
 
 </section>
 </if-block>
@@ -231,8 +339,15 @@ marginB: .form-content-date-main-container_H / 20 !i;
         left: (.page_W - .form_W) / 2; 
         bottom: (.page_H - .form_H) / 2;" src="https://img.freepik.com/free-vector/worldwide-connection-blue-background-illustration-vector_53876-61770.jpg" alt="" srcset=""> -->
     </section>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="./js/main.js"></script>
 <script src="./js/Unify_SignUp.js"></script>
 </body>
 </html>
+
+
+<!-- 
+<reminder date="21-07-2025">
+now work on email sent and show error messages and username not found and don't have an account create one. -->
+
+

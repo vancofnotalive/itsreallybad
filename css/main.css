@@ -87,3 +87,9 @@ if-block[theme=dark] {
         display: contents;
       }
 }
+target-block {
+  display: none;
+}
+target-block[data-active="true"] {
+  display: contents;
+}
