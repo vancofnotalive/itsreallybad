@@ -230,22 +230,52 @@ width: (.form-email-sent-container_H + .form-email-sent-container_W) / 13;">
     
 </section>
 <section class="email-sent-text" ds="width: .form-email-sent-container_W / 1.1;
-height: (.form-email-sent-container_H - (.email-icon_H)) / 4.4;
+height: (.form-email-sent-container_H - (.email-icon_H)) / 4;
 paddingT: .email-sent-text_H / 6 !i;">
-    <h1 ds="fs: (.email-sent-text_H + .email-sent-text_W) / 30;">We have sent a code to</h1>
-    <a href="https://gmail.com/" target="_blank" ds="fs: (.email-sent-text_H + .email-sent-text_W) / 32;">exampleeamil@gmail.com</a>
-    <h3 ds="fs: (.email-sent-text_H + .email-sent-text_W) / 60;"> Please check your email and enter the code below</h3>
+    <h1 ds="fs: (.email-sent-text_H + .email-sent-text_W) / 20;">We have sent a code to</h1>
+    <a href="https://gmail.com/" target="_blank" ds="fs: (.email-sent-text_H + .email-sent-text_W) / 25;">exampleeamil@gmail.com</a>
+    <h3 ds="fs: (.email-sent-text_H + .email-sent-text_W) / 50;"> Please check your email and enter the code below</h3>
 </section>
 
 <section id="email-code" class="email-code" ds="height: (.form-email-sent-container_H - (.email-icon_H + .email-sent-text_H)) / 3;
 width: .form-email-sent-container_W / 1.1;">
 <span ds="height: .email-code_H / 1.5; 
 width: .email-code_W / 7;">
-<input ds="fs: (.email-code_H + .email-code_W) / 25;" connect="email-code-input-1" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1">
+<strong ds="fs: (.email-code_H + .email-code_W) / 25;"></strong>
 <input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" 
-class="invincible-email-code-input" host="email-code-input-1">
+class="invincible-email-code-input" oninput="simulateInput(this , this.closest('span').querySelector('strong'))">
 </span>
 <span ds="height: .email-code_H / 1.5; 
+width: .email-code_W / 7;">
+<strong ds="fs: (.email-code_H + .email-code_W) / 25;"></strong>
+<input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" 
+class="invincible-email-code-input" oninput="simulateInput(this , this.closest('span').querySelector('strong'))">
+</span>
+<span ds="height: .email-code_H / 1.5; 
+width: .email-code_W / 7;">
+<strong ds="fs: (.email-code_H + .email-code_W) / 25;"></strong>
+<input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" 
+class="invincible-email-code-input" oninput="simulateInput(this , this.closest('span').querySelector('strong'))">
+</span>
+<span ds="height: .email-code_H / 1.5; 
+width: .email-code_W / 7;">
+<strong ds="fs: (.email-code_H + .email-code_W) / 25;"></strong>
+<input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" 
+class="invincible-email-code-input" oninput="simulateInput(this , this.closest('span').querySelector('strong'))">
+</span>
+<span ds="height: .email-code_H / 1.5; 
+width: .email-code_W / 7;">
+<strong ds="fs: (.email-code_H + .email-code_W) / 25;"></strong>
+<input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" 
+class="invincible-email-code-input" oninput="simulateInput(this , this.closest('span').querySelector('strong'))">
+</span>
+<span ds="height: .email-code_H / 1.5; 
+width: .email-code_W / 7;">
+<strong ds="fs: (.email-code_H + .email-code_W) / 25;"></strong>
+<input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" 
+class="invincible-email-code-input" oninput="simulateInput(this , this.closest('span').querySelector('strong'))">
+</span>
+<!-- <span ds="height: .email-code_H / 1.5; 
 width: .email-code_W / 7;">
 <input ds="fs: (.email-code_H + .email-code_W) / 25;" connect="email-code-input-2" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1">
 <input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" 
@@ -274,7 +304,7 @@ width: .email-code_W / 7;">
 <input ds="fs: (.email-code_H + .email-code_W) / 25;" connect="email-code-input-6" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1">
 <input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" 
 class="invincible-email-code-input" host="email-code-input-6">
-</span>
+</span> -->
 </section>
 <section class="email-form-row-btn" ds="width: .email-code_W;
  height: (.form-email-sent-container_H - (.email-icon_H + .email-sent-text_H + .email-code_H)) / 2;">
@@ -288,9 +318,9 @@ class="invincible-email-code-input" host="email-code-input-6">
 
 <section class="email-form-row-btn-submit-btn" ds="height: .email-form-row-btn_H / 2;
 width: .email-form-row-btn_W / 2;">
-    <h1 ds="border-width: (.email-form-row-btn-submit-btn_H + .email-form-row-btn-submit-btn_W) / 50;
-    height: (.email-form-row-btn-submit-btn_H - ((.email-form-row-btn-submit-btn_H + .email-form-row-btn-submit-btn_W) / 50)) / 2;
-    width: .email-form-row-btn-submit-btn_W - (((.email-form-row-btn-submit-btn_H - ((.email-form-row-btn-submit-btn_H + .email-form-row-btn-submit-btn_W) / 50)) / 2) * 1.5);
+    <h1 ds="border-width: (.email-form-row-btn-submit-btn_H + .email-form-row-btn-submit-btn_W) / 30;
+    height: (.email-form-row-btn-submit-btn_H - ((.email-form-row-btn-submit-btn_H + .email-form-row-btn-submit-btn_W) / 30)) / 2;
+    width: .email-form-row-btn-submit-btn_W - (((.email-form-row-btn-submit-btn_H - ((.email-form-row-btn-submit-btn_H + .email-form-row-btn-submit-btn_W) / 30)) / 2) * 1.6);
     fs: (.email-form-row-btn-submit-btn_H + .email-form-row-btn-submit-btn_W) / 25;">Submit</h1>
 </section>
 

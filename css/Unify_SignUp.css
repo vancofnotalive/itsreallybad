@@ -412,16 +412,22 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 justify-content: space-between;
 }
+.email-sent-text h1  {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+}
 .email-sent-text h3 {
     color: rgb(245, 245, 245);
 margin-top: 1ch !important;
-font-family: Arial, Helvetica, sans-serif;
+font-weight: 400;
+
 
 }
 .email-sent-text a {
     
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-weight: 400;
 }
 .email-code {
     display: flex;
@@ -438,6 +444,7 @@ font-family: Arial, Helvetica, sans-serif;
 display: flex;
 align-items: center;
 justify-content: center;
+color: rgb(0, 63, 158);
 }
 .email-code span input {
     width: 1ch;
@@ -469,7 +476,7 @@ opacity: 0;
 }
 .email-form-row-btn-submit-btn {
     background-color: rgb(255, 255, 255);
-    border-radius: 3dvh;
+    border-radius: 100dvh;
     cursor: pointer;
 transition: 200ms;
 }
@@ -479,12 +486,13 @@ transition: 200ms;
 .email-form-row-btn-submit-btn h1 {
     border-color: rgb(0, 102, 255);
 border-style: solid;
-border-radius: 2dvh;
+border-radius: 3dvh;
 background-color: rgb(0, 102, 255);
 display: flex;
 align-items: center;
 justify-content: center;
 color: white;
+font-weight: 400;
 }
 .email-form-row-btn-submit-btn:hover {
     
@@ -492,7 +500,8 @@ color: white;
     background-position: 100% 0;
     animation: moveGradient 2s linear infinite;
     border-radius: 100dvh;
-    transform: translateY(-3%) scale(1.020);
+    transform: translateY(-3%);
+    
 }
 
 @keyframes moveGradient {
@@ -508,7 +517,7 @@ color: white;
     border-radius: 100dvh;
     background-color: rgb(65, 141, 255);
     border-color: rgb(65, 141, 255);   
-    transform: scale(1.020);
+    transform: scale(1);
     
 }
 .go-back-btn {
@@ -547,6 +556,7 @@ color: white;
 .email-form-resend h1 {
     color: white;
     margin-right: 1ch !important;
+    font-weight: 400;
 }
 .email-form-resend button {
     background-color: rgb(54, 54, 54);
@@ -554,7 +564,7 @@ color: white;
     border-radius: 1dvh;
     color: white;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 400;
     transition: 200ms;
 }
 .email-form-resend button i {
