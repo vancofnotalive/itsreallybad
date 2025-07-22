@@ -39,7 +39,7 @@
         <i style="margin-right: 1ch !important;" class="fa-solid fa-id-card-clip"></i>
         <h6>Name</h6>
         </span> 
-           <input value="Jhon martin doe" type="text" ds="height:  $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80);
+           <input value="" type="text" ds="height:  $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80);
             width: $t$.form-content-heading--input_W - (($t$.form-content-heading--input_W / 5) + (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 70))">
         </main>
         <h1 id="errorMessage" ds="height: ($t$.form-content-heading--input_H / 2) - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 75);
@@ -57,7 +57,7 @@
            fs: ($t$.form-content-heading--input@main_H + $t$.form-content-heading--input@main_W) / 40;">
         <i class="fa-solid fa-envelope" style="margin-right: 1ch !important;"></i>
     <h6>Email</h6></span> 
-           <input value="exampleeamil@gmail.com" type="text" ds="height:  $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80);
+           <input value=""  type="text" ds="height:  $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80);
             width: $t$.form-content-heading--input_W - (($t$.form-content-heading--input_W / 5) + (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 70))">
         </main>
         <h1 id="errorMessage" ds="height: ($t$.form-content-heading--input_H / 2) - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 75);
@@ -74,7 +74,7 @@
            fs: ($t$.form-content-heading--input@main_H + $t$.form-content-heading--input@main_W) / 40;">
          <i style="margin-right: 1ch !important;" class="fa-solid fa-signature"></i>
         <h6>Username</h6></span> 
-           <input value="user1234312" type="text" ds="height:  $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80);
+           <input value="" type="text" ds="height:  $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80);
             width: $t$.form-content-heading--input_W - (($t$.form-content-heading--input_W / 5) + (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 70))">
         </main>
         <h1 id="errorMessage" ds="height: ($t$.form-content-heading--input_H / 2) - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 75);
@@ -91,7 +91,8 @@
            fs: ($t$.form-content-heading--input@main_H + $t$.form-content-heading--input@main_W) / 40;">
         <i class="fa-solid fa-key" style="margin-right: 1ch !important;"></i>
     <h6>Password</h6></span> 
-           <input  type="text" ds="height:  $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80);
+           <input  type="text" 
+           ds="height:  $t$.form-content-heading--input@main_H - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 80);
             width: $t$.form-content-heading--input_W - (($t$.form-content-heading--input_W / 5) + (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 70))">
         </main>
         <h1 id="errorMessage" ds="height: ($t$.form-content-heading--input_H / 2) - (($t$.form-content-heading--input_H + $t$.form-content-heading--input_W) / 75);
@@ -127,15 +128,15 @@ marginB: .form-content-date-main-container_H / 20 !i;
                     <span ds="
                     width: $t$.form-content-date-container-value_W;
                     height: $t$.form-content-date-container-value_H / 3;">
-                        <strong ds="fs: ($t$.form-content-date-container-value@span_W + $t$.form-content-date-container-value@span_H) / 13;">02</strong>
+                        <strong ds="fs: ($t$.form-content-date-container-value@span_W + $t$.form-content-date-container-value@span_H) / 13;"></strong>
                     </span>
                     
-                      <input oninput="simulateInput(this , this.closest('section').querySelector('span strong'))" type="text" ds="
+                      <input oninput="simulateInput(this , this.closest('section').querySelector('span strong') , [[this.closest('.form-content-date-container-value') , 'data-day']])" type="text" ds="
                     width: $t$.form-content-date-container-value_W;
                     height: $t$.form-content-date-container-value_H; bottom: $t$.form-content-date-container-value@h6_H;">
                 </section>
               
-                <section class="form-content-date-container-value" data-day="month" ds="
+                <section class="form-content-date-container-value" data-month="" ds="
                 width: .form-content-date-container_W / 4.1;
                 height: .form-content-date-container_H;">
                     <h1 ds="height: $t$.form-content-date-container-value_H / 3;
@@ -145,15 +146,15 @@ marginB: .form-content-date-main-container_H / 20 !i;
                     <span ds="
                     width: $t$.form-content-date-container-value_W;
                     height: $t$.form-content-date-container-value_H / 3;">
-                        <strong ds="fs: ($t$.form-content-date-container-value@span_W + $t$.form-content-date-container-value@span_H) / 13;">Jan</strong>
+                        <strong ds="fs: ($t$.form-content-date-container-value@span_W + $t$.form-content-date-container-value@span_H) / 13;"></strong>
                     </span>
                                        
-                      <input oninput="simulateInput(this , this.closest('section').querySelector('span strong'))" type="text" ds="
+                      <input oninput="simulateInput(this , this.closest('section').querySelector('span strong') , [[this.closest('.form-content-date-container-value') , 'data-month']])" type="text" ds="
                     width: $t$.form-content-date-container-value_W;
                     height: $t$.form-content-date-container-value_H; bottom: $t$.form-content-date-container-value@h6_H;">
                 </section>
               
-                <section class="form-content-date-container-value" data-day="year" ds="
+                <section class="form-content-date-container-value" data-year="" ds="
                 width: .form-content-date-container_W / 4.1;
                 height: .form-content-date-container_H;">
                     <h1 ds="height: $t$.form-content-date-container-value_H / 3;
@@ -163,10 +164,10 @@ marginB: .form-content-date-main-container_H / 20 !i;
                     <span ds="
                     width: $t$.form-content-date-container-value_W;
                     height: $t$.form-content-date-container-value_H / 3;">
-                        <strong ds="fs: ($t$.form-content-date-container-value@span_W + $t$.form-content-date-container-value@span_H) / 13;">2002</strong>
+                        <strong ds="fs: ($t$.form-content-date-container-value@span_W + $t$.form-content-date-container-value@span_H) / 13;"></strong>
                     </span>
                                        
-                      <input oninput="simulateInput(this , this.closest('section').querySelector('span strong'))" type="text" ds="
+                      <input oninput="simulateInput(this , this.closest('section').querySelector('span strong') , [[this.closest('.form-content-date-container-value') , 'data-year']])" type="text" ds="
                     width: $t$.form-content-date-container-value_W;
                     height: $t$.form-content-date-container-value_H; bottom: $t$.form-content-date-container-value@h6_H;">
                 </section>
@@ -179,12 +180,12 @@ marginB: .form-content-date-main-container_H / 20 !i;
 <span id="errorMessageText" ds="fs: (.form-content-date-main-container-error-message_H + .form-content-date-main-container-error-message_W) / 60;"> </span>
         </section>
   </section>
-  <!-- height is not right -->
+ 
   <section class="form-content-btn-row" ds="
   height: (.form-content_H - (.form-content-heading_H + (.form-content-heading--input_H * 4) + .form-content-date_H)) / 5;
   width: .form-content_W / 1.1;">
   
-    <section class="form-content-create-btn" onclick="createAccount()" ds="
+    <section class="form-content-create-btn" onclick="createAccountLoading()" ds="
     border-width: (.form-content-btn-row_H + .form-content-btn-row_W) / 150;
     width: .form-content-btn-row_W / 3;
     height: .form-content-btn-row_H / 1.2;">
@@ -200,10 +201,21 @@ marginB: .form-content-date-main-container_H / 20 !i;
   </section>
   </section>
 
+  <section onclick="continuteForm()" class="continue-email" ds="width: .already-have-account_W / 1.1;
+  height: (.form-content_H - (.form-content-heading_H + (.form-content-heading--input_H * 4) + .form-content-date_H + .form-content-btn-row_H)) / 5;
+  marginL: (.form-content_W - (.form-content_W / 1.1)) !i;">
+  <button ds="height: .continue-email_H / 1.1;
+  width: .continue-email_W / 3;
+  fs: (.continue-email_H + .continue-email_W) / 30;">
+    Continue
+    <i class="fa-solid fa-circle-right"></i>
+  </button>
+  </section>
+
 
 
 </section>
-<section class="form-image " ds="height: .form_H; width: .form_W / 2;">
+<section class="form-image " continue="false" ds="height: .form_H; width: .form_W / 2;">
     <main ds="width: .form-image_W; height: .form-image_H / 5;">
         <img ds="width: $t$.form-image@main_W / 2.5; max-height: $t$.form-image@main_H;" src="https://i.postimg.cc/3wRXXvyy/blue-upscalemedia-transformed.png" alt="" srcset="">
     </main>
@@ -215,7 +227,8 @@ marginB: .form-content-date-main-container_H / 20 !i;
     </target-block>
     
     <target-block element=".form-content" has="form-content-deactivate">
-<section class="form-email-sent-container " ds="width: .form-content_W;
+
+        <section class="form-email-sent-container " ds="width: .form-content_W;
 height: .form-content_H - ($t$.form-image@main_H);">
     
 <section class="email-icon" ds="height: (.form-email-sent-container_H + .form-email-sent-container_W) / 13; 
@@ -233,7 +246,7 @@ width: (.form-email-sent-container_H + .form-email-sent-container_W) / 13;">
 height: (.form-email-sent-container_H - (.email-icon_H)) / 4;
 paddingT: .email-sent-text_H / 6 !i;">
     <h1 ds="fs: (.email-sent-text_H + .email-sent-text_W) / 20;">We have sent a code to</h1>
-    <a href="https://gmail.com/" target="_blank" ds="fs: (.email-sent-text_H + .email-sent-text_W) / 25;">exampleeamil@gmail.com</a>
+    <a href="https://gmail.com/" target="_blank" ds="fs: (.email-sent-text_H + .email-sent-text_W) / 25;"></a>
     <h3 ds="fs: (.email-sent-text_H + .email-sent-text_W) / 50;"> Please check your email and enter the code below</h3>
 </section>
 
@@ -339,6 +352,42 @@ width: .form-email-sent-container_W / 1.1;">
 
 
 </section>
+<section class="form-creating" ds="height: .form-content_H - ($t$.form-image@main_H);
+width: .form-content_W;">
+
+<section class="form-creating-circle" ds="
+height: (.form-creating_H + .form-creating_W) / 6;
+width: (.form-creating_H + .form-creating_W) / 6;
+border-width: (.form-creating_H + .form-creating_W) / 100;">
+
+<main ds="
+width: .form-creating-circle_W;
+height: .form-creating-circle_H;">
+<span ds="height: .form-creating-circle@main_H / 10;
+width: .form-creating-circle@main_W * 2;"></span>
+</main>
+
+<aside ds="height: .form-creating-circle_H / 1.5;
+width: .form-creating-circle_W / 1.5;">
+<img ds="width: .form-creating-circle@aside_W * 2;"
+     src="https://cdn.dribbble.com/userupload/23469654/file/original-6bffe9252be14caa00e6097ca504baa2.gif" alt="" srcset="">
+</aside>
+</section>
+<section class="form-creating-text"
+ds="height: (.form-creating_H -.form-creating-circle_H) / 5;
+width: .form-creating_W / 2;
+marginT: .form-creating-text_H / 2 !i;">
+
+    <!-- <img src="https://i.pinimg.com/originals/74/43/a3/7443a31b6a19e5630b94a6538ff9bdd1.gif" alt="" srcset="">
+ -->
+
+    <h1 ds="fs: (.form-creating-text_H + .form-creating-text_W) / 20;">Creating account</h1>
+    <h2 ds="fs: (.form-creating-text_H + .form-creating-text_W) / 30;">Please be patient</h2>
+</section>
+
+</section>
+
+
     </target-block>
 </section>
 </if-block>
@@ -377,7 +426,11 @@ width: .form-email-sent-container_W / 1.1;">
 
 
 <!-- 
-<reminder date="21-07-2025">
-now work on email sent and show error messages and username not found and don't have an account create one. -->
+<reminder date="22-07-2025">
+now work on loading animation in card and then a notification bar
+for now for loading I have chose this icon gif:
+https://cdn.dribbble.com/userupload/23469654/file/original-6bffe9252be14caa00e6097ca504baa2.gif
+and then prepare for backend and move to backend
 
-
+fav gifs:
+https://i.pinimg.com/originals/74/43/a3/7443a31b6a19e5630b94a6538ff9bdd1.gif
