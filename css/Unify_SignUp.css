@@ -2,11 +2,14 @@ img {
     width: 100%;
 }
 body {
-    position: relative;
+    position: absolute;
     justify-content: center;
 }
 * {
     scrollbar-width: none;
+}
+.page {
+    position: absolute;
 }
 .background-image {
     position: absolute;
@@ -125,7 +128,8 @@ img {
 .form-content-heading--input main span {
     
     display: flex;
-    background-color: rgb(0, 84, 209 , 0.950);
+    /* background-color: rgb(0, 84, 209 , 0.950); */
+    background-color: rgba(44, 44, 44, 0.95);
     align-items: center;
     border-radius: 1dvh;
     color: white;
@@ -171,7 +175,8 @@ img {
     justify-content: space-between;
 }
 .form-content-date-container-key {
-    background-color: rgb(0, 84, 209 , 0.950);
+    /* background-color: rgb(0, 84, 209 , 0.950); */
+    background-color: rgba(44, 44, 44, 0.95);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -197,7 +202,9 @@ display: flex;
 justify-content: center;
 align-items: center;
 font-weight: 500;
-color: rgb(0, 84, 209 , 0.950);
+/* color: rgb(0, 84, 209 , 0.950); */
+color: rgba(44, 44, 44, 0.95);
+
 }
 
 .form-content-date-container-value input {
@@ -212,7 +219,8 @@ color: rgb(0, 84, 209 , 0.950);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 0.1dvh solid rgb(0, 84, 209 , 0.950);
+    /* border-bottom: 0.1dvh solid rgb(0, 84, 209 , 0.950); */
+    border-bottom: 0.1dvh solid rgba(44, 44, 44, 0.95);
     
 }
 .form-content-date-container-value span strong {
@@ -252,7 +260,8 @@ color: rgb(0, 84, 209 , 0.950);
 .form-content-create-btn {
     position: absolute;
     right: 0;
-    background-color: rgb(0, 26, 255 , 0);
+    /* background-color: rgb(0, 26, 255 , 0); */
+    background-color: rgba(44, 44, 44, 0.80);
     display: flex;
     flex-direction: column;
     border-radius: 2dvh;
@@ -272,8 +281,10 @@ color: rgb(0, 84, 209 , 0.950);
     
 }
 .form-content-create-btn:hover {
-    border-color: rgb(0, 69, 172);
-    background-color: rgb(0, 63, 158);
+    border-color: rgb(219, 219, 219);
+    background-color: rgba(44, 44, 44, 0.95);
+    /* border-color: rgb(0, 69, 172);
+    background-color: rgb(0, 63, 158); */
     transform: scale(1.020) translateY(-3%);
 }
 .already-have-account {
@@ -627,6 +638,7 @@ font-weight: 400;
     display: flex;
     flex-direction: column;
 }
+
 .form-creating-text h1 {
     
   color: transparent;
@@ -681,15 +693,17 @@ font-weight: 400;
 
 }
 .continue-email {
-    align-self: flex-start;
-    left: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    
     display: none;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 
 }
 .continue-email button {
-    background-color: rgb(51, 51, 51);
+    background-color: rgb(0, 0, 0 , 0);
     border: none;
     outline: none;
     border-radius: 1dvh;
@@ -698,5 +712,490 @@ font-weight: 400;
 }
 .continue-email button:hover {
     transform: scale(1.020);
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0 , 0.1);
+}
+
+.signup-with-btns {
+    /* background-color: red; */
+    align-self: flex-start;
+    display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.signup-with-btns-btn {
+    display: flex;
+    align-items: center;
+    border: 0.1dvh solid transparent;
+    border-radius: 1dvh;
+    cursor: pointer;
+    background-color: white;
+    transition: 200ms transform;
+    
+}
+.signup-with-btns-btn main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.signup-with-btns-btn aside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signup-with-btns-btn:hover {
+    transform: translate(0 , -5%) scale(1.020);
+}
+.signup-with-btns-btn:active {
+    
+    transform: translate(0 , 0%) scale(0.980);
+    filter: brightness(80%);
+}
+.form-content-input---phone {
+    
+    display: flex;
+    
+    
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.form-content-input---phone h1 {
+    display: flex;
+    align-items: center;
+   
+    justify-content: center;
+}
+.form-content-input---phone main {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1dvh;
+    
+}
+.form-content-input---phone  aside {
+    display: flex;
+    align-items: flex-start;
+}
+.form-content-input---phone main span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-content-input---phone input {
+    /* background-color: #f1f1f1; */
+    border-radius: 1dvh;
+    text-indent: 1ch;
+    border: 0.1dvh solid black;
+}
+.form-content-phone-logo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    
+
+}
+.form-content-input---phone h6 {
+    background-color: rgb(255, 0, 0);
+    border-radius: 1dvh;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+#errorMessage {
+transform: scale(0);
+opacity: 0;
+}
+.form-content-input---phone h6 span {
+    
+    color: white;
+    overflow-y: scroll;
+}
+.form-content-input-date---phone {
+    
+    display: flex;
+    flex-direction: column;
+    
+}
+.form-content-input-date---phone aside {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1dvh;
+}
+.form-content-input-date---phone main {
+    
+    display: flex;
+    align-items: center;
+    align-self: center;
+}
+.form-content-input-date---phone main h1 {
+    margin-left: 1ch !important;
+}
+.form-content-input-date---phone-values {
+    
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.form-content-input-date---phone-value {
+    position: relative;
+    display: flex;
+    
+}
+.form-content-input-date---phone-value span:nth-child(1) {
+width: 50%;
+background-color: rgb(0, 0, 0);
+height: 100%;
+border-bottom-left-radius: 0.5dvh;
+border-top-left-radius: 0.5dvh;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+}
+.form-content-input-date---phone-value span:nth-child(2) {
+width: 50%;
+background-color: rgb(240, 240, 240);
+height: 100%;
+border-bottom-right-radius: 0.5dvh;
+border-top-right-radius: 0.5dvh;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow-x: scroll;
+}
+.form-content-input-date---phone-value input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+.form-content-input-date---phone h6 {
+    background-color: rgb(255, 0, 0);
+    display: flex;
+    align-items: center;
+    border-radius: 1dvh;
+    transform: scale(0);
+}
+
+.form-content-input-date---phone h6 span {
+    margin-left: 1ch !important;
+    color: white;
+}
+
+.sign-up-btn-phone {
+    
+    border-radius: 1dvh;
+border-color: white;
+border-style: solid;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+background-color: white;
+}
+.sign-up-btn-phone h1 {
+    position: relative;
+    background-color: rgb(0, 63, 158);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1dvh;
+    transition: 200ms;
+}
+.sign-up-btn-phone h1 aside {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    /* background-color: red; */
+}
+.sign-up-btn-phone h1 aside span {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+}
+
+.sign-up-btn-phone-dec-left {
+    left: 0;
+}
+.sign-up-btn-phone-dec-right {
+    right: 0;
+}
+.sign-up-btn-phone:hover h1 {
+    transform: scale(0.950);
+    background-color: rgb(0, 63, 158 , 0.8);
+}
+
+.phone-or-section {
+    position: relative;
+    
+    display: flex;
+    
+    justify-content: center;
+}
+.phone-or-section aside {
+    position: absolute;
+    height: 100%;
+    
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+.phone-or-section aside span {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    transform: translate(0 , -50%);
+}
+.phone-or-section aside:nth-child(1) {
+    left: 0;
+}
+.phone-or-section aside:nth-child(2) {
+    right: 0;
+}
+.phone-or-section h1 {
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.continue-with-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    
+}
+.continue-with-btns button {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    border: none;
+    border-radius: 1dvh;
+    overflow: hidden;
+    justify-content: space-between;
+    
+}
+.continue-with-btns button span {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.continue-with-btns button span img {
+    max-height: 100%;
+}
+.continue-with-btns-btn {
+    transition: 200ms transform;
+}
+.continue-with-btns-btn main {
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.continue-with-btns-btn main img {
+    max-height: 100%;
+}
+.continue-with-btns-btn:hover {
+    transform: translate(0 , 3%) scale(1.020);
+    filter: brightness(90%);
+}
+.already-account-container---phone {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.already-account-container---phone h2{
+background-color: white;
+border-radius: 1dvh;
+color: rgb(0, 63, 158);
+}
+.wrapper {
+    display: flex;
+    height: fit-content;
+    color: white;
+    height: 100%;
+    align-items: center;
+    
+    
+}
+.continue-email-box---phone {
+    position: absolute;
+    right: 0;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* design button */
+    background-color: rgb(0, 0, 0 , 0.1);
+    border-radius: 1dvh;
+    color: white;
+}
+.continue-email-box---phone span {
+    margin-right: 1ch !important;
+}
+.wrapper-continue {
+    position: absolute;
+    left: 0;
+}
+
+.form-loader--phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.phone-form-loader-circle {
+    position: relative;
+    background-color: rgb(234, 225, 214);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.phone-form-loader-circle main {
+    overflow: hidden;
+    background-color: rgb(234, 225, 214);
+z-index: +1;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.phone-form-loader-circle aside {
+    position: absolute;
+  overflow: hidden;
+    /* background-color: rgb(234, 225, 214); */
+    background-color: rgb(0, 132, 255);
+    border-radius: 50%;
+    animation: rotate 4s infinite linear;
+    
+}
+.phone-form-loader-circle aside span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    /* background-color: rgb(0, 132, 255); */
+    background-color: rgb(234, 225, 214);
+    
+}
+.form-loader--phone-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-loader--phone-text h1 {
+    
+  color: transparent;
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    rgb(0, 162, 255) 25%,
+    rgb(0, 162, 255) 50%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: scrollGradient 2s linear infinite;
+  
+}
+.form-loader--phone-text h2 {
+    color: transparent;
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #9c9c9c 25%,
+    #c5c5c5 50%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    animation: scrollGradient 2s linear infinite;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.phone-form-contents-show-up {
+animation: showUpPhoneFormContents 400ms;
+}
+.phone-form-contents-show-down {
+animation: showDownPhoneFormContents 400ms;
+}
+.phone-form-loading-show-down {
+animation: showDownPhoneFormLoading 400ms;
+}
+.phone-form-loading-show-up {
+animation: showUpPhoneFormLoading 400ms;
+}
+@keyframes showUpPhoneFormContents {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes showDownPhoneFormContents {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+@keyframes showUpPhoneFormLoading{
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes showDownPhoneFormLoading {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+.phone-email-sent-form {
+    
+    display: flex;
+    flex-direction: column;
+    
 }

@@ -1,3 +1,14 @@
+function isUserTypingNow() {
+  const el = document.activeElement;
+  return (
+    el &&
+    (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') &&
+    !el.readOnly &&
+    !el.disabled
+  );
+}
+
+
 function getCurrentDeviceType() {
   const width = window.innerWidth;
   if (width <= 480) return "phone";
@@ -22,22 +33,23 @@ function bindMirroredInputs() {
     map[key].connects.push(conn);
   });
 
-  for (const key in map) {
-    const { host, connects } = map[key];
-    if (!host) continue;
+for (const key in map) {
+  const { host, connects } = map[key];
+  if (!host) continue;
 
-    const updateAll = (val, skipEl) => {
-      if (host !== skipEl) host.value = val;
-      connects.forEach(el => {
-        if (el !== skipEl) el.value = val;
-      });
-    };
-
-    host.addEventListener("input", () => updateAll(host.value, host));
-    connects.forEach(conn => {
-      conn.addEventListener("input", () => updateAll(conn.value, conn));
+  const updateAll = (val, skipEl) => {
+    if (host !== skipEl) host.value = val;
+    connects.forEach(el => {
+      if (el !== skipEl) el.value = val;
     });
-  }
+  };
+
+  host.addEventListener("input", () => updateAll(host.value, host));
+  connects.forEach(conn => {
+    conn.addEventListener("input", () => updateAll(conn.value, conn));
+  });
+}
+
 }
 
 function handleMoveTags() {
@@ -127,7 +139,8 @@ function updateTargetBlockVisibility(root) {
 }
 
 function applyDynamicStylesToElement(root) {
-  updateTargetBlockVisibility(root); // 🔁 Add this line at the top
+  
+  updateTargetBlockVisibility(root); 
   const propertyMap = {
     marginT: "margin-top", marginR: "margin-right",
     marginB: "margin-bottom", marginL: "margin-left",
@@ -170,6 +183,7 @@ if (target) {
 
 
   all.forEach(el => {
+    
     const rules = el.getAttribute("ds").split(";").map(r => r.trim()).filter(Boolean);
     rules.forEach(rule => {
       let [rawProp, expr] = rule.split(":").map(s => s.trim());
@@ -231,18 +245,40 @@ function applyDynamicStylesToClone() {
   return cleanString(clone.innerHTML);
 }
 
-function observeLayoutChanges() {
-  const observer = new MutationObserver(() => applyDynamicStyles());
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-    attributes: true,
-    attributeFilter: ["class", "style", "ds", "device", "has", "element"],
-  });
+let mutationObserver = null;
+let resizeObserver = null;
 
-  const resize = new ResizeObserver(() => applyDynamicStyles());
-  resize.observe(document.body);
+function connectLayoutObservers() {
+  if (isUserTypingNow()) return;
+
+  if (!mutationObserver) {
+    mutationObserver = new MutationObserver(() => applyDynamicStyles());
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["class", "style", "ds", "device", "has", "element"],
+    });
+  }
+
+  if (!resizeObserver) {
+    resizeObserver = new ResizeObserver(() => applyDynamicStyles());
+    resizeObserver.observe(document.body);
+  }
 }
+
+function disconnectLayoutObservers() {
+  if (mutationObserver) {
+    mutationObserver.disconnect();
+    mutationObserver = null;
+  }
+
+  if (resizeObserver) {
+    resizeObserver.disconnect();
+    resizeObserver = null;
+  }
+}
+
 
 
 function normalizeHTML(str) {
@@ -262,25 +298,26 @@ function setBodyHeight() {
 }
 
 function init() {
-  setBodyHeight();
+ setTimeout(() => {
+   setBodyHeight();
   moveElementsIntoActiveIf();
   handleMoveTags();
   bindMirroredInputs();
-  applyDynamicStyles();
-
-  window.requestAnimationFrame(() => {
-    window.requestAnimationFrame(() => {
-      applyDynamicStyles();
-    });
-  });
-
-  setTimeout(() => applyDynamicStyles(), 200);
+ }, 50);
 }
 
 window.addEventListener("DOMContentLoaded", init);
 window.addEventListener("resize", init);
 
+function  observeLayoutChanges() {
+  connectLayoutObservers();
+}
+
 observeLayoutChanges();
 
+/* 
+!) $t$TagName is not supported. Experiemtn with it
 
-// figure out why targte is still not showing
+!) target block element="" does not support %t% and those syntaxes, it just takes
+	 simple class
+*/

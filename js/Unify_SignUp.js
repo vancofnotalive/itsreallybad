@@ -14,6 +14,39 @@ function simulateInput(input , placeToPutdata , places = []) {
         })
        }
 }
+function simulateInputs(input , placesToPutData = []) {
+
+    // placesToPutData[0]  = query selctor in string or element direct(to get visible value)
+    // placesToPutData[1] = attribute name
+    // placesToPutData[2] = element to get that attribute(if not given sets attribute to placesToPutData[0]) this can also be either string or element direct
+    let value = input.value.trim();
+  placesToPutData.forEach(placeSelector => {
+    let element;
+  if (placeSelector[0] instanceof Element) {
+    element = placeSelector[0];
+    element.innerText = value;
+  }
+  else if (typeof placeSelector[0] === "string") {
+    element =  document.querySelector(placeSelector[0]);
+   element.innerText = value;
+  }
+  if(placeSelector[1] != null && placeSelector[1] != "") {
+    if (placeSelector[2] == null || placeSelector[2] == "") 
+    element.setAttribute(placeSelector[1] , value);
+else {
+    let elementToHaveAttribute;
+    if (typeof placeSelector[2] === 'string')
+    elementToHaveAttribute = document.querySelector(placeSelector[2])
+else
+    elementToHaveAttribute = placeSelector[2];
+
+    elementToHaveAttribute.setAttribute(placeSelector[1] , value);
+       
+    }
+  }
+  })
+
+}
 function setCustomAttribute(selecter , attributeName , attributeValue) {
     if (typeof(selecter) == 'object') {
    return selecter.setAttribute(attributeName , attributeValue)    
@@ -30,6 +63,7 @@ function showError(text , inputName) {
         let errorMessageText = element.querySelector("#errorMessageText")
         errorMessageText.innerText = text;
         errorMessage.style.transform = "scale(1)";
+        errorMessage.style.opacity = "1";
        errorMessage.style.animation = "errorMessageShow 200ms";
        setTimeout(() => {
            
@@ -135,6 +169,7 @@ function hideInputInternal(name) {
          let errorMessage =  name.querySelector("#errorMessage");
          errorMessage.style.transition = "0ms";
          errorMessage.style.transform = "scale(0)"
+         errorMessage.style.opacity = "0"
          errorMessage.transition = "400ms";
          
         }
@@ -184,14 +219,24 @@ showError("Email cannot be empty" , "email");
     if (password.length < 4) {
         showError("Password must be more than 4 characters long" , "password");
     }
-    const passwordHasSpecialChars = /[!@#$%^&*()\-\_=+\[\]{}\\|;:'",<.>\/?`~]/.test(password);
-
-    if (!passwordHasSpecialChars) {
-        showError("Passord must contain at least one special character" , "password");
-    }
+    
     if (password.length > 64) {
         
         showError("Password must be smaller than 64 characters" , "password");
+    }
+
+    const passwordHasNumbers = /\d/.test(password);
+
+if (!passwordHasNumbers) {
+returnData.valid = false
+        showError("Passord must contain at least one number" , "password");
+}
+
+    const passwordHasSpecialChars = /[!@#$%^&*()\-\_=+\[\]{}\\|;:'",<.>\/?`~]/.test(password);
+
+    if (!passwordHasSpecialChars) {
+        returnData.valid = false
+        showError("Passord must contain at least one special character" , "password");
     }
     if (password == "")  {
 returnData.valid = false
@@ -209,8 +254,9 @@ returnData.valid = false
     "password": password,
     "username": username
    }
-  var date = document.querySelector("#date");
-   date.querySelectorAll("*").forEach(el => {
+  var dates = document.querySelectorAll("#date");
+   dates.forEach(date => {
+date.querySelectorAll("*").forEach(el => {
     
        
         if (!breakLoop) {
@@ -263,37 +309,38 @@ showError("Invalid year, you can't be this old" , "date")
             }
         }
         else if (el.hasAttribute('data-day')) {
-            let value = Number(el.getAttribute("data-day"));
+            let value = el.getAttribute("data-day");
             const matches = [...el.getAttribute("data-day").matchAll(/[a-z]/gi)];
             if (matches.length > 0) {
                 breakLoop = true;
                 returnData.valid = false
                 showError("Invaid day" , "date")
             }
-           
-            else if(value > 31 || value <= 0) {
-                breakLoop = true;
-                returnData.valid = false
-showError("Invalid day" , "date")
-            }
-            else if (value == "" || value == null) {
+             else if (value == "" || value == null) {
                 breakLoop = true;
                 returnData.valid = false
                 showError("Day cannot be empty" , "date")
             }
+            else if(Number(value) > 31 || Number(value) <= 0) {
+                breakLoop = true;
+                returnData.valid = false
+showError("Invalid day" , "date")
+            }
+           
             else {
                 data.day = value;
             }
         }
     }
     })
-if (data != null) {
-if (!isValidDate(data.day , data.month , data.year)) {
-    if (date.querySelector("#errorMessage").style.transform == "scale(0)")
-    showError("Invalid date" , "date")
-    returnData.valid = false;
-}
-}
+    if (data != null) {
+        if (!isValidDate(data.day , data.month , data.year)) {
+            if (date.querySelector("#errorMessage").style.transform == "scale(0)")
+                showError("Invalid date" , "date")
+            returnData.valid = false;
+        }
+    }
+})
 
 
 if (returnData.valid && !breakLoop)  {
@@ -341,13 +388,14 @@ function isMonthCorrect(monthName) {
 }
 
 
-function createAccount(email) { 
+function createAccount(email , isContinue = false) { 
  let formContent = document.querySelector(".form-content");
  let formContentImage = document.querySelector(".form-image");
  
  formContentImage.className = "form-image form-image-deactivate"
  formContentImage.querySelector("main img").style.opacity = "0";
-    setTimeout(() => {
+ if (!isContinue) {
+  setTimeout(() => {
       formContentImage.className = "form-image form-image-deactivate form-image-deactivate-2" 
       setTimeout(() => {
           formContentImage.querySelector("main img").style.filter = "brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7472%) hue-rotate(206deg) brightness(114%) contrast(100%)";
@@ -358,6 +406,20 @@ function createAccount(email) {
           }, 1)
       }, 300)
     }, 500)
+ }
+  else {
+     setTimeout(() => {
+      formContentImage.className = "form-image form-image-deactivate form-image-deactivate-2" 
+      setTimeout(() => {
+          formContentImage.querySelector("main img").style.filter = "brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7472%) hue-rotate(206deg) brightness(114%) contrast(100%)";
+          formContentImage.style.zIndex = "+2";
+          setTimeout(() => {
+              formContentImage.querySelector("main img").style.opacity = "1";
+             showEmailFormContent(email)
+          }, 1)
+      }, 300)
+    }, 0)
+  }
  formContent.className = "form-content form-content-deactivate"
 
 }
@@ -490,7 +552,64 @@ if (data.valid) {
     }
     
     function continuteForm() {
-        createAccount();
+        createAccount(null , true);
     }
 
     
+
+
+    function continueWithGoogle() {
+// get data from backend and fill in form and then show alert data has been filed, now desiced username and password
+    }
+    function continueWithFacebook() {
+// get data from backend and fill in form and then show alert data has been filed, now desiced username and password
+    }
+
+    
+    function phoneSignUpBtn() {
+       let formData = getFormData();
+       // this is where loading starts of creating accout animation
+    }
+
+    function startContentLoading() {
+        // this is the function that triggers phone's loading screen of creating account animation
+    }
+
+    
+    function phoneFormLoader() {
+       
+      let formContents = document.getElementById("phone-form-contents")
+    
+        formContents.classList.remove("phone-form-contents-show-up");
+        formContents.classList.add("phone-form-contents-show-down");
+    setTimeout(() => {
+    showLoader();
+    }, 200)
+    }
+
+    function showLoader() {
+        let phoneForm = document.querySelector(".phone-form-content");
+          let loader = phoneForm.querySelector("#form-phone-loader")
+            loader.classList.remove("phone-form-loading-show-down")
+        phoneForm.className = "form-content phone-form-content phone-form-content---loading"
+        loader.classList.add("phone-form-loading-show-up")
+    }
+
+    function phoneFormGoBackFormFromLoading() {
+       let phoneForm = document.querySelector(".phone-form-content");
+      let formContents = document.getElementById("phone-form-contents")
+         
+       let loader = phoneForm.querySelector("#form-phone-loader")
+       loader.classList.remove("phone-form-loading-show-up")
+       loader.classList.add("phone-form-loading-show-down")
+  
+    setTimeout(() => {
+           formContents.classList.remove("phone-form-contents-show-down");
+           phoneForm.className = "form-content phone-form-content phone-form-content---form"
+           formContents.classList.add("phone-form-contents-show-up");
+
+           
+    }, 200)
+    }
+
+

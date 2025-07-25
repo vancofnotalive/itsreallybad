@@ -443,14 +443,17 @@ marginT: .form-creating-text_H / 2 !i;">
     <!-- phone-form-content---form = normal form -->
     <!-- phone-form-content---loading = loading screen -->
     <!-- phone-form-content---email = show email sent screen -->
-    <section class="form-content phone-form-content phone-form-content---loading" ds="width: .form_W; height: .form_H;">
+    <section class="form-content phone-form-content phone-form-content---email" ds="width: .form_W; height: .form_H;">
 <section class="form-content-phone-logo" 
 ds="height: $t$.form-content_H / 7;
 width: $t$.form-content_W / 1.1;">
     <img ds="width: .form-content-phone-logo_W / 1.5;
     max-height: .form-content-phone-logo_H / 1.050;" src="https://i.postimg.cc/3wRXXvyy/blue-upscalemedia-transformed.png" style="filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7472%) hue-rotate(206deg) brightness(114%) contrast(100%);" alt="" srcset="">
 </section>
-<target-block element=".phone-form-content" has="phone-form-content---form">
+<target-block   element=".phone-form-content" has="phone-form-content---form">
+    <section class="top-container phone-form-contents-show-up" id="phone-form-contents">
+
+    
     <section class="form-content-heading"
     
     ds="width: $t$.form-content_W / 1.1;
@@ -500,7 +503,7 @@ width: $t$.form-content_W / 1.1;">
             width: $t$.form-content-input---phone@h6_W / 1.1;
             max-height: $t$.form-content-input---phone@h6_H / 1.1;
             line-height: ($t$.form-content-input---phone@h6_H + $t$.form-content-input---phone@h6_W) / 20;" id="errorMessageText">
-        Error message goes here
+         error 0
         </span>
         </h6>
     </section>
@@ -544,7 +547,7 @@ width: $t$.form-content_W / 1.1;">
             width: $t$.form-content-input---phone@h6_W / 1.1;
             max-height: $t$.form-content-input---phone@h6_H / 1.1;
             line-height: ($t$.form-content-input---phone@h6_H + $t$.form-content-input---phone@h6_W) / 20;" id="errorMessageText">
-        Error message goes here
+         error 1
         </span>
         </h6>
     </section>
@@ -588,7 +591,7 @@ width: $t$.form-content_W / 1.1;">
             width: $t$.form-content-input---phone@h6_W / 1.1;
             max-height: $t$.form-content-input---phone@h6_H / 1.1;
             line-height: ($t$.form-content-input---phone@h6_H + $t$.form-content-input---phone@h6_W) / 20;" id="errorMessageText">
-        Error message goes here
+         error 2
         </span>
         </h6>
     </section>
@@ -632,7 +635,7 @@ width: $t$.form-content_W / 1.1;">
             width: $t$.form-content-input---phone@h6_W / 1.1;
             max-height: $t$.form-content-input---phone@h6_H / 1.1;
             line-height: ($t$.form-content-input---phone@h6_H + $t$.form-content-input---phone@h6_W) / 20;" id="errorMessageText">
-        Error message goes here
+         error 3
         </span>
         </h6>
     </section>
@@ -702,7 +705,9 @@ oninput="simulateInputs(this , [[this.closest('section').querySelector('#phone-d
     marginT: .form-content-input-date---phone_H - (.form-content-input-date---phone@aside_H + .form-content-input-date---phone@h6_H) !i;">
         <span id="errorMessageText"
         ds="width: $t$.form-content-input-date---phone@h6_W;
-        fs: ($t$.form-content-input-date---phone@h6_H + $t$.form-content-input-date---phone@h6_W) / 30;">Error Message goes here</span>
+        fs: ($t$.form-content-input-date---phone@h6_H + $t$.form-content-input-date---phone@h6_W) / 30;">
+    error 5
+    </span>
     </h6>
     </section>
     <button onclick="phoneSignUpBtn()" class="sign-up-btn-phone" ds="
@@ -789,7 +794,7 @@ ds="width: $t$.continue-with-btns-btn@main_W;
     normal = when no need to go email box
      continue = when to go to email box
       -->
-    <section class="already-account-container---phone already-account-container---phone--normal" 
+    <section class="already-account-container---phone already-account-container---phone--email" 
     ds="width: $t$.form-content_W / 1.1;
     height: 
 ($t$.form-content_H - (.form-content-phone-logo_H + $t$.form-content@.form-content-heading_H + (.form-content-input---phone_H * 4) + .form-content-input-date---phone_H + .sign-up-btn-phone_H + .phone-or-section_H + .continue-with-btns_H)) / 1.5;">
@@ -832,18 +837,63 @@ width: .already-account-container---phone_W / 2.8;">
 
 
     </section>
+    </section>
 </target-block>
 
-<target-block element=".phone-form-content" has="phone-form-content---loading">
-<!-- 
-<reminder date="25-07-2025">
-    yaha per loading banao phone ki same design ki
-    and then below this target block next target block ma email sent ka screen banao
-</reminder>
--->
+<target-block  element=".phone-form-content" has="phone-form-content---loading">
+    <section class="top-container phone-form-loading-show-up" id="form-phone-loader">
+
+    
+<section class="form-loader--phone" 
+ds="height: $t$.form-content_H - (.form-content-phone-logo_H);
+width: $t$.form-content_W;">
+
+<section class="phone-form-loader-circle"
+ds="height: (.form-loader--phone_H + .form-loader--phone_W) / 4;
+width:  (.form-loader--phone_H + .form-loader--phone_W) / 4;">
+
+<aside 
+ds="height: .phone-form-loader-circle_H / 1.1;
+width: .phone-form-loader-circle_W / 1.1;">
+<span ds="height: .phone-form-loader-circle@aside_H / 5;
+width: .phone-form-loader-circle@aside_W * 2;">
+
+</span>
+</aside>
+
+<main ds="height: .phone-form-loader-circle_H / 1.3;
+width: .phone-form-loader-circle_W / 1.3;">
+    <img ds="width: .phone-form-loader-circle_W * 1.5;" src="https://cdn.dribbble.com/userupload/23469654/file/original-6bffe9252be14caa00e6097ca504baa2.gif" alt="" srcset="">
+</main>
+
+
+</section>
+<!-- now work on function that opens this loading
+ and then make a universial loader function -->
+<section class="form-loader--phone-text"
+ds="width: .form-loader--phone_W / 1.1;
+height: (.form-loader--phone_H - (.phone-form-loader-circle_H)) / 5;">
+
+    <h1 ds="fs: (.form-loader--phone-text_H + .form-loader--phone-text_W) / 20;">Creating account</h1>
+    <h2 ds="fs: (.form-loader--phone-text_H + .form-loader--phone-text_W) / 25;">Please be patient</h2>
+</section>
+
+
+</section>
+</section>
 </target-block>
 <target-block element=".phone-form-content" has="phone-form-content---email">
-show email content
+<section class="top-container email-sent-form---phone">
+
+    <section class="phone-email-sent-form" 
+    ds="height: $t$.form-content_H - .form-content-phone-logo_H;
+    width: $t$.form-content_W;">
+    
+    
+    
+</section>
+</section>
+
 </target-block>
 
 
